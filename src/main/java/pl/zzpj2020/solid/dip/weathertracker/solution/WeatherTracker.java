@@ -1,0 +1,18 @@
+package pl.zzpj2020.solid.dip.weathertracker.solution;
+
+public class WeatherTracker {
+
+    protected String currentConditions;
+    private Device device;
+
+    public WeatherTracker(Device device){
+        this.device=device;
+    }
+
+    public void setCurrentConditions(String weatherDescription) {
+        this.currentConditions = weatherDescription;
+        String alert = device.generateWeatherAlert(weatherDescription);
+        System.out.print(alert);
+    }
+
+}
